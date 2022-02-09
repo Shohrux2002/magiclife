@@ -1,0 +1,130 @@
+/* Umid Rustamov, [07.02.2022 8:49] */
+/* 
+COLORS:
+
+LightGreen: #7ed56f
+MediumGreen: #55c57a
+DarkGreen: #7ed56f
+
+*/
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  padding: 3rem;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(127, 212, 112, 0.8),
+      rgba(126, 213, 111, 0.8)
+    ),
+    url(hero.jpg);
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0 0%, 100% 0, 100% 75%, 0 100%);
+}
+img {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+}
+.hedader__text {
+  color: rgba(255, 255, 255, 0.781);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 50%;
+}
+.hedader__text--btn {
+  margin-top: 2rem;
+  text-decoration: none;
+  padding: 1.5rem 2.5rem;
+  border-radius: 3rem;
+  background-color: #fff;
+  color: #333;
+  animation-name: movebottom;
+  animation-duration: 2s;
+  position: relative;
+}
+h1 {
+  font-size: 6.2rem;
+  animation-name: moveleft;
+  animation-duration: 2s;
+}
+h2 {
+  font-size: 2.4rem;
+  line-height: 4rem;
+  animation-name: moveright;
+  animation-duration: 2s;
+}
+h1,
+h2 {
+  letter-spacing: 3rem;
+}
+.hedader__logo {
+  width: 8%;
+}
+@keyframes moveleft {
+  0% {
+    opacity: 0;
+    transform: translate(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveright {
+  0% {
+    opacity: 0;
+    transform: translate(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes movebottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.hedader__text--btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  color: black;
+  border: none;
+  border-radius: 20px;
+  text-decoration: none;
+  transition: all 0.4s;
+  z-index: -1;
+}
+.hedader__text--btn:hover::after {
+  transform: scale(2);
+  opacity: 0;
+}
