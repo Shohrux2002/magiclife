@@ -3,3 +3,33 @@
   background-color: $section-backgrountcolor;
   margin-top: -25vh;
 }
+.future {
+  padding: 20rem 3rem;
+
+  transform: skewY(-7deg);
+  background-image: linear-gradient(
+      to bottom right,
+      rgba(127, 212, 112, 0.8),
+      rgba(126, 213, 111, 0.8)
+    ),
+    url(../imgs/hero.jpg);
+
+  background-size: cover;
+  > * {
+    transform: skewY(7deg);
+  }
+  &-block {
+    transform: skewY(7deg);
+  }
+  &-box {
+    transition: all 0.2s;
+
+    background-color: $section-backgrountcolor;
+    padding: 5rem 2rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem $textcolordark;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

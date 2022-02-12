@@ -60,6 +60,13 @@ body {
   .text-box:not(:last-child) {
     margin-bottom: 3rem; }
 
+.future-box-icon {
+  display: inline-block;
+  font-size: 4.4rem;
+  background-image: linear-gradient(to right, #55c57a, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text; }
+
 .hedader__text--btn {
   margin-top: 2rem;
   text-decoration: none;
@@ -184,6 +191,24 @@ body {
   padding: 25rem 0;
   background-color: #f7f7f7;
   margin-top: -25vh; }
+
+.future {
+  padding: 20rem 3rem;
+  transform: skewY(-7deg);
+  background-image: linear-gradient(to bottom right, rgba(127, 212, 112, 0.8), rgba(126, 213, 111, 0.8)), url(../imgs/hero.jpg);
+  background-size: cover; }
+  .future > * {
+    transform: skewY(7deg); }
+  .future-block {
+    transform: skewY(7deg); }
+  .future-box {
+    transition: all 0.2s;
+    background-color: #f7f7f7;
+    padding: 5rem 2rem;
+    text-align: center;
+    box-shadow: 0 0.5rem 1rem #333; }
+    .future-box:hover {
+      transform: scale(1.2); }
 
 .u-text-center {
   text-align: center; }
