@@ -25,36 +25,40 @@
 html {
   font-size: 62.5%; }
 
-* {
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box; }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  height: 95vh;
-  background-image: linear-gradient(to bottom right, rgba(127, 212, 112, 0.8), rgba(126, 213, 111, 0.8)), url(../imgs/hero.jpg);
-  background-position: center;
-  background-size: cover;
-  clip-path: polygon(0 0%, 100% 0, 100% 75%, 0 100%); }
+body {
+  padding: 3rem; }
 
-.hedader__logo {
-  position: absolute;
-  top: 5rem;
-  left: 5rem; }
+.heading-secondary {
+  font-size: 3.6rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  background-image: linear-gradient(to right, #55c57a, #28b485);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: all 0.2s;
+  letter-spacing: 0.2rem; }
+  .heading-secondary:hover {
+    transform: skewY(2deg) skewX(15deg);
+    text-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.2); }
 
-.hedader__text {
-  color: #fff;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 4rem;
-  width: 50%; }
+.heading-tertiary {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-transform: uppercase; }
+
+.text-box {
+  font-size: 1.6rem;
+  font-weight: 400; }
+  .text-box:not(:last-child) {
+    margin-bottom: 3rem; }
 
 .hedader__text--btn {
   margin-top: 2rem;
@@ -84,6 +88,80 @@ html {
     transform: scale(2);
     opacity: 0; }
 
+.btn-text {
+  transition: all 0.2s; }
+  .btn-text:link, .btn-text:visited {
+    font-size: 1.6rem;
+    color: #7ed56f;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 0.1rem solid #7ed56f;
+    padding: 0.3rem; }
+  .btn-text:hover {
+    color: #fff;
+    padding: 0.3rem;
+    background-color: #7ed56f;
+    transform: translateY(-0.2rem); }
+  .btn-text:active {
+    transform: translateY(0); }
+
+.row {
+  max-width: 114rem;
+  margin: 0 auto; }
+  .row:not(:last-child) {
+    margin-bottom: 8rem; }
+
+::after {
+  content: "";
+  display: table;
+  clear: both; }
+
+[class^="col-"] {
+  float: left; }
+  [class^="col-"]:not(:last-child) {
+    margin-right: 6rem; }
+
+.col-1-of-2 {
+  width: calc((100% - 6rem) / 2); }
+
+.col-1-of-3 {
+  width: calc((100% - 2 * (6rem)) / 3); }
+
+.col-2-of-3 {
+  width: calc( 2 * ((100% - 2 * (6rem)) / 3) + 6rem); }
+
+.col-1-of-4 {
+  width: calc((100% - (6rem) * 3) / 4); }
+
+.col-2-of-4 {
+  width: calc((100% - (6rem) * 3) / 4); }
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 95vh;
+  background-image: linear-gradient(to bottom right, rgba(127, 212, 112, 0.8), rgba(126, 213, 111, 0.8)), url(../imgs/hero.jpg);
+  background-position: center;
+  background-size: cover;
+  clip-path: polygon(0 0%, 100% 0, 100% 75%, 0 100%); }
+
+.hedader__logo {
+  position: absolute;
+  top: 5rem;
+  left: 5rem; }
+
+.hedader__text {
+  color: #fff;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4rem;
+  width: 50%; }
+
 .header__text--title {
   font-size: 6.2rem;
   animation-name: moveleft;
@@ -101,3 +179,48 @@ html {
 
 .hedader__logo {
   width: 8%; }
+
+.section-about {
+  padding: 25rem 0;
+  background-color: #f7f7f7;
+  margin-top: -25vh; }
+
+.u-text-center {
+  text-align: center; }
+
+.u-margin-bottom-big {
+  margin-bottom: 8rem; }
+
+.composition {
+  position: relative; }
+  .composition__photo {
+    width: 55%;
+    border-radius: 1px;
+    box-shadow: 0 1.5rem 3rem rgba(0, 0, 0, 0.4);
+    position: absolute;
+    z-index: 10;
+    outline-offset: 2rem;
+    transition: all 0.2s; }
+    .composition__photo--1 {
+      top: -2rem;
+      left: 0; }
+      .composition__photo--1:hover {
+        z-index: 20;
+        transform: scale(1.2);
+        outline: 1rem solid #7ed56f; }
+    .composition__photo--2 {
+      right: 0rem;
+      top: 3rem; }
+      .composition__photo--2:hover {
+        z-index: 20;
+        transform: scale(1.2);
+        outline: 1rem solid #7ed56f; }
+    .composition__photo--3 {
+      left: 20%;
+      top: 10rem; }
+      .composition__photo--3:hover {
+        z-index: 20;
+        transform: scale(1.2);
+        outline: 1rem solid #7ed56f; }
+  .composition:hover .composition__photo:not(:hover) {
+    transform: scale(0.9); }
